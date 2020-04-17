@@ -226,11 +226,11 @@ console.log(artists[8].name);
  * For example, if getArtistByIndex is invoked with the inventory and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-function getArtistByIndex(id, name) {
+//function getArtistByIndex(array, name) {
     /* code here */
-    return `The artist at index ${id} is ${name}.`;
-}
-console.log(getArtistByIndex(artists[0].id, artists[0].name));
+   // return `The artist at index ${array} is ${name}.`;
+//}
+//console.log(getArtistByIndex(array.id, artists[0].name));
   /**
 
 
@@ -254,23 +254,24 @@ console.log(getArtistByIndex(artists[0].id, artists[0].name));
 
 /* Task 5: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1800-1900) */
 
-function get20s(/* Code here */data){
+//function get20s(/* Code here */artists){
 
-    /* Code here */
+  /* Code here */
 
-    data = artist.filter(function(item) {
-      return item === 1800-1900;
-    });
+  //artists = artists.filter(function(item) {
+  //  return item !== 1800-1900;
+  //});
 
-  }
+//}
 
-  console.log(get20s(data));
+//console.log(get20s(item));
 
 /* Task 6: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 
 function lotsOfArt(/* Code here */){
 
     /* Code here */
+  
 
   }
 
@@ -293,11 +294,17 @@ function addArtist(/* Code here */){
 
 /* Task 8: Create a function called `checkArtist` that accepts a string (name of an artist) and checks if that artist is in the dataset. */
 
-function checkArtist(/* Code here */){
+function checkArtist(/* Code here */name){
 
     /* Code here */
 
-  }
+    if(name === true) {
+      return `${name} is in the dataset.`;
+    }else {
+      return `${name} is not in the dataset.`;
+    }
+}
+console.log(checkArtist(name));
 
 
 

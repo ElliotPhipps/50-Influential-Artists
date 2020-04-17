@@ -94,8 +94,14 @@ nav {
 }
 nav a {
   justify-content: center;
-  width: 20%;
-  border-right: 1px solid black;
+  width: 23%;
+  text-decoration: none;
+  font-size: 1.5rem;
+  padding: 11% 0;
+  color: black;
+}
+nav #home {
+  font-weight: bolder;
 }
 .title-container {
   display: flex;
@@ -112,7 +118,7 @@ nav a {
 }
 .title-container .center {
   position: absolute;
-  top: 35%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -127,6 +133,15 @@ nav a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding: 2% 7%;
+  font-size: 0.9rem;
+  border-radius: 8%;
+}
+hr {
+  width: 55%;
+  margin-top: 1.5%;
+  margin-bottom: 1%;
 }
 .artists-container {
   display: flex;
@@ -136,6 +151,16 @@ nav a {
 }
 .artists-container .artist {
   flex-direction: column;
+  width: 39%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+.artists-container .artist a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: black;
 }
 .artists-container .artist img {
   width: 50%;

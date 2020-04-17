@@ -18,7 +18,7 @@
    .center {
 
        position: absolute;
-       top: 35%;
+       top: 45%;
        left: 50%;
        transform: translate(-50%, -50%);
 
@@ -34,10 +34,20 @@
            display: flex;
            flex-direction: column;
            align-items: center;
-       }
+           justify-content: center;
+           padding: 2% 7%;
+           font-size: .9rem;
+           border-radius: 8%;
+        }
 
     }
     
+}
+
+hr {
+    width: 55%;
+    margin-top: 1.5%;
+    margin-bottom: 1%;
 }
 
 .artists-container {
@@ -48,6 +58,17 @@
 
     .artist {
         flex-direction: column;
+        width: 39%;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        font-size: .8rem;
+
+        a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: black;
+        }
 
         img {
             width: 50%;

@@ -214,9 +214,9 @@ console.log(artists[2].bio);
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-artists[8].name = 'Vincent Van Gogh' ;
+artists.slice(8,9)[0].name = 'Vincent Van Gogh';
 
-console.log(artists[8].name);
+console.log(artists);
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -226,11 +226,15 @@ console.log(artists[8].name);
  * For example, if getArtistByIndex is invoked with the inventory and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
-//function getArtistByIndex(array, name) {
-    /* code here */
-   // return `The artist at index ${array} is ${name}.`;
-//}
-//console.log(getArtistByIndex(array.id, artists[0].name));
+function getArtistByIndex(artists, num) {
+  for(let i = 0; i<artists.length; i++){
+    if(i === num){
+      return `The artist at index ${artists[i].id} is ${artists[i].name}.`;
+    }
+  }
+  
+}
+console.log(getArtistByIndex(artists, 3));
   /**
 
 
@@ -242,39 +246,49 @@ console.log(artists[8].name);
  * For example, if removeArtist is invoked with the data and the number 0,
  * it will remove Amedeo Modigliani from our dataset.
 */
-//function removeArtist(/*code here*/artists, num) {
-    /* code here */
-   // artists.splice(num);
-  //}
+function removeArtist(artists, index) {
+  artists.splice(index, 1);
+  return artists;
+}
 
-  //console.log(removeArtist(artists[0]));
-  
-  /**
+removeArtist(artists, 0);
+
+//console.log(artists);
+/**
 
 
 /* Task 5: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born the 20th century (1800-1900) */
 
-//function get20s(/* Code here */artists){
+function get20s(data){
+  const twentiesArtists = [];
+  for(let i = 0; i < data.length; i++){
+    const birthYear = Number(data[i]['years'].slice(0, 4));
+    if(birthYear > 1800 && birthYear < 1900){
+      
+      twentiesArtists.push(data[i].name);
+    }
+  }
+  return twentiesArtists;
 
-  /* Code here */
+}
 
-  //artists = artists.filter(function(item) {
-  //  return item !== 1800-1900;
-  //});
-
-//}
-
-//console.log(get20s(item));
+console.log(get20s(artists));
 
 /* Task 6: Create a function called lotsOfArt() that takes artists as an argument and returns an array with names of artists who painted more than 100 paintings */
 
-function lotsOfArt(/* Code here */){
+function lotsOfArt(artists){
+  const manyPaintings = [];
 
-    /* Code here */
-  
-
+  for(let i = 0; i < artists.length; i++){
+    const paintings = artists[i].paintings;
+    if(paintings > 100){
+      manyPaintings.push(artists[i].name);
+    }
   }
+  return manyPaintings;
+}
 
+console.log(lotsOfArt(artists));
 
 /* Task 7: Create a function called `addArtist` that can accept an array of information and add it to the artists array. Then, Add a 21st artist to the array (you) with custom information! 👩‍🎨👨‍🎨
 
@@ -285,30 +299,35 @@ genre: Web Design,
 nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) "*/
 
-function addArtist(/* Code here */){
-
-    /* Code here */
-
-  }
-
+function addArtist(artists, artist){
+  artists.push(artist);
+  return artists
+}
+addArtist(artists, {
+  id: 21,
+  name: 'Elliot Phipps',
+  years: '1995-2020',
+  genre: 'Web Design',
+  nationality: 'American',
+  bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae mauris nec augue tempus posuere.'
+})
+console.log(artists);
 
 /* Task 8: Create a function called `checkArtist` that accepts a string (name of an artist) and checks if that artist is in the dataset. */
 
-function checkArtist(/* Code here */name){
-
-    /* Code here */
-
-    if(name === true) {
+//1. create function
+//2. create string
+// check to see if artist is in dataset
+function checkArtist(name){
+  for(let i = 0; i < artists.length; i++){
+    
+    if(name === artists[i].name) {
       return `${name} is in the dataset.`;
-    }else {
-      return `${name} is not in the dataset.`;
     }
+  } 
+  return `${name} is not in the dataset.`;
 }
-console.log(checkArtist(name));
-
-
-
-
+console.log(checkArtist('El Greco'));
 
 // 🎨🎨 STRETCH 🎨🎨//
 

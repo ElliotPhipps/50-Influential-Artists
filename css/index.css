@@ -100,15 +100,12 @@ nav a {
   width: 23%;
   text-decoration: none;
   font-size: 1.5rem;
-  padding: 11% 0;
+  margin: 8% 2%;
   color: black;
   align-items: center;
 }
 nav .line {
   border-right: 1px solid black;
-  padding-left: 2%;
-  padding-right: 2%;
-  height: auto;
 }
 nav #home {
   font-weight: bolder;
@@ -141,7 +138,7 @@ nav #home {
   flex-direction: column;
   align-items: center;
 }
-.title-container .center .btn-parent {
+.title-container .center .btn-parent button {
   background-color: whitesmoke;
   color: black;
   display: flex;
